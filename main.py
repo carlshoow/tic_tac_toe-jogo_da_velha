@@ -37,7 +37,12 @@ while True:
     if jogadas == 9 and  not ganhador:
         print('Deu velha!')
     print('='*20)
-
-    dnv = str(input('Quer jogar novamente? [S/N] ')).strip().upper()[0]
+    while True:
+        try:
+            dnv = str(input('Quer jogar novamente? [S/N] ')).strip().upper()[0]
+        except:
+            print('Resposta invalida!')
+        else:
+            break
     if dnv == 'N':
         break

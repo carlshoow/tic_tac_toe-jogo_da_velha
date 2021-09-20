@@ -5,11 +5,11 @@ def mostrar(mat):
 
     for c in range(3):
         print()
-        for j in range(3):
-            if j == 0 or j == 1:
-                print(f'{mat[c][j]:^10}|', end='')
+        for l in range(3):
+            if l == 0 or l == 1:
+                print(f'{mat[c][l]:^10}|', end='')
                 continue
-            print(f'{mat[c][j]:^10}', end='')
+            print(f'{mat[c][l]:^10}', end='')
 
         print()
         if c != 2:
@@ -39,10 +39,10 @@ def jogar(mat, escolha, XouO):
     '''
     ok = False
     for c in range(0, 3):
-        for j in range(0, 3):
-            if escolha == mat[c][j]:
-                if mat[c][j] != 'X' or mat[c][j] != 'Ø':
-                    mat[c][j] = XouO
+        for l in range(0, 3):
+            if escolha == mat[c][l]:
+                if mat[c][l] != 'X' or mat[c][l] != 'Ø':
+                    mat[c][l] = XouO
                     ok = True
                     return ok
                 else:
@@ -57,12 +57,12 @@ def ganhador(mat):
     '''
 
     # Verificar as horizontais
-    for c in mat:
-        if c.count('X') == 3 or c.count('Ø') == 3:
+    for l in mat:
+        if l.count('X') == 3 or l.count('Ø') == 3:
             return True
     # Verificar as verticais
-    for l in range(3):
-        if mat[0][l] == mat[1][l] and mat[0][l] == mat[2][l]:
+    for c in range(3):
+        if mat[0][c] == mat[1][c] and mat[0][c] == mat[2][c]:
             return True
 
     # Verifica diagonal 1
